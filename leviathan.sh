@@ -52,8 +52,11 @@ cd .trash
 // Binary message, sets of height (bytes?) : 01010100 01101001 01110100 01101000 00110100 01100011 01101111 01101011 01100101 01101001 00001010
 ./bin | tr " " "\n" // replace every space by a new line
 ./bin | tr " " "\n" | while read line; do echo "$line"; done
-./bin | tr " " "\n" | while read line; do echo "obase=16;ibase=2;$line" | bc; done // converts binary to hex // obase means out base and ibase means in base
+./bin | tr " " "\n" | while read line; do echo "obase=16;ibase=2;$line" | bc; done // converts binary to hex // obase means out base and ibase means in base // so we converted from base2 (binary) to base16 (hex)
 ./bin | tr " " "\n" | while read line; do echo "obase=16;ibase=2;$line" | bc; done | tr -d "\n" // back to one line
-./bin | tr " " "\n" | while read line; do echo "obase=16;ibase=2;$line" | bc; done | tr -d "\n" | xxd -r -p
+./bin | tr " " "\n" | while read line; do echo "obase=16;ibase=2;$line" | bc; done | tr -d "\n" | xxd -r -p // xxd converts a hex dump back to its original binary form
 Tith4cokei
 
+lvl 5 --> lvl 6
+ssh leviathan5@leviathan.labs.overthewire.org -p 2223
+Tith4cokei
