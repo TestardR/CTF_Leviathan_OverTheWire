@@ -71,6 +71,8 @@ UgaoFee4li
 lvl 6 --> lvl 7
 ssh leviathan6@leviathan.labs.overthewire.org -p 2223
 UgaoFee4li
-
-
- for i in {0000..9999}; do echo $i; do /leviathan6 $i; done
+ls
+./leviathan6 // answer <4 digit code>, lets brute force with a loop !
+for i in {0000..9999}; do echo $i; ./leviathan6 $i; done
+cat /etc/leviathan_pass/leviathan7
+ahy7MaeBo9
